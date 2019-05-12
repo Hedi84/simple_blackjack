@@ -15,6 +15,8 @@ class Controller
   def start_game
     2.times do
       add_card_dealer
+    end
+    2.times do
       add_card_player
     end
     check_dealer
@@ -49,7 +51,7 @@ class Controller
     elsif @player_score < @dealer_score
       puts "===============You lose!==============="
     end
-    @view.final_scores(@player_score, @dealer_score, @player, @dealers)
+    @view.final_scores(@player_score, @dealer_score, @player, @dealer)
   end
 
   def add_card_player
@@ -82,7 +84,7 @@ class Controller
 
   def is_ace(key)
     if @game.deck[key] == "ace"
-      answer = @view.ask_player_ace
+      answer = @view.ask_player_ace(@player_score, @player)
       if answer == "1"
         return 1
       elsif answer == "11"

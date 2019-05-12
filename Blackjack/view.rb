@@ -27,12 +27,13 @@ class View
     end
     puts "The dealer's total score is #{dealer_score.to_s}"
     puts "They have #{array.length} cards:"
-    array.each do |card|
+    array2.each do |card|
       puts "- #{card.to_s}"
     end
   end
 
-  def ask_player_ace
+  def ask_player_ace(score, player)
+    show_cards(score, player)
     puts "you've received an ace, enter '1' to let it count for one point or '11' for 11 points."
     answer = gets.chomp
     return answer

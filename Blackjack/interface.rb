@@ -5,10 +5,8 @@ class Interface
 
 
   def run
-    # loop do
       welcome
       @controller.start_game
-    # end
   end
 
   private
